@@ -7,7 +7,6 @@ body {
     font-family: 'Arial', 'Helvetica', 'sans-serif';
     margin: 0;
     padding: 0;
-    padding-top: 60px;
     background-color: black;
     font-size: 18px;
 }
@@ -17,26 +16,22 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 25px 40px;
-    background-color: black;
-    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    position: sticky;
     z-index: 1000;
+    background-color: black;
     box-sizing: border-box;
 }
 
 header a {
+    color: white;
+    text-decoration: none;
     font-weight: bold;
 }
 
 a:hover {
     text-decoration: underline;
-}
-
-a {
-    color: white;
-    text-decoration: none;
 }
 
 section {
@@ -82,6 +77,10 @@ footer {
     box-sizing: border-box;
 }
 
+footer a {
+    color: white;
+    text-decoration: none;
+}
 
 .social-media {
     display: flex;
@@ -108,6 +107,7 @@ footer {
 .about-info {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     flex-direction: row;
     gap: 30px;
 }
@@ -122,6 +122,10 @@ footer {
     width: 300px;
     height: auto;
     border-radius: 20px;
+}
+
+.about-info a {
+    text-decoration: none;
 }
 
 .about-info a strong:hover {
@@ -157,6 +161,8 @@ strong {
 .album-info {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 8px;
     color: black;
     text-align: center;
@@ -211,6 +217,7 @@ strong {
     border: 0;
     padding: 0;
     cursor: pointer;
+    flex-shrink: 0;
     transition: background 0.3s ease
 }
 
@@ -250,11 +257,11 @@ strong {
 .song-info {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    flex: 0 0 160px;
     gap: 6px;
 }
 
-.duration  {
+.duration {
     font-size: 16px;
 }
 
@@ -287,7 +294,7 @@ strong {
 .progress-bar {
     -webkit-appearance: none;
     appearance: none;
-    flex: 0 0 750px;
+    flex-grow: 1;
     cursor: pointer;
     outline: none;
     height: 6px;
@@ -336,26 +343,44 @@ strong {
 
 
 /* Мобильная версия (до 768px) */
-@media (max-width: 768px) {    
+@media (max-width: 768px) {   
+    html {
+        scroll-padding-top: 90px;
+    }
+    
     body {
         font-size: 14px;
     }
 
     header {
         flex-direction: column;
-        align-items: flex-start;
+        gap: 10px;
+        padding: 15px 20px;
+    }
+
+    header a {
+        text-decoration: underline;
+    }
+
+    section {
+        padding: 0 20px;
+        margin-top: 40px;
     }
     
     nav ul {
-        flex-direction: column;
+        flex-direction: row;
         gap: 15px;
-        list-style: circle;
     }
 
     footer {
         flex-direction: column;
         align-items: center;
         gap: 10px;
+        padding: 25px 20px;
+    }
+
+    footer a {
+        text-decoration: underline;
     }
 
     .social-media {
@@ -369,52 +394,75 @@ strong {
     .about-info {
         flex-direction: column-reverse;
         padding: 0, 20px;
+        gap: 10px;
     }
 
     .about-info p {
-        font-size: 16px;
-        margin-right: 0;
+        font-size: 14px;
+        margin: 0;
     }
 
     .about-info img {
         width: 100%;
         height: auto;
-    }
-
-    .album-card {
-        width: 110px;
-    }
-
-    .album-card h3 {
-        font-size: 16px;
-    }
-
-    .prev-btn, .next-btn {
-        width: 40px;
-        height: 30px;
-        font-size: 16px;
-    }
-
-    .song-card {
-        width: 100%;
-        margin-bottom: 15px;
-    }
-
-    .song-card h3 {
-        font-size: 16px;
-    }
-
-    .song-card audio {
-        width: 100%;
-    }
-
-    nav ul li a {
-        text-decoration: underline;
+        padding-top: 15px;
     }
 
     .about-info a {
         text-decoration: underline;
         color: #6cb8e0;
+    }
+
+    .album-card {
+        width: 120px;
+        gap: 10px;
+    }
+
+    .album-card h3, .song-info h3 {
+        font-size: 14px;
+    }
+
+    .album-info p, .song-info p {
+        font-size: 12px;
+    }
+
+    .album-info {
+        gap: 2px;
+    }
+
+    .prev-btn, .next-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+
+    .song-cover {
+        width: 40px;
+        height: 40px;
+    }
+
+    .song-card {
+        gap: 10px;
+    }
+
+    .song-info {
+        flex: 0 0 130px;
+        gap: 4px;
+    }
+
+    .duration {
+        font-size: 13px;
+    }
+    
+    .play-btn {
+        font-size: 12px;
+        width: 25px;
+        height: 25px;
+    }
+
+    .progress-bar {
+        width: 100%;
+        max-width: 100%;
     }
 }
 
