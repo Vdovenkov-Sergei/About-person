@@ -480,3 +480,22 @@ strong {
         font-size: 28px;
     }
 }
+
+/* Отключение hover для мобильных устройств */
+@media (hover: none) {
+    .social-icon:hover {
+        opacity: 1 !important;
+    }
+
+    .album-card:hover, .song-card:hover {
+        transform: none !important;
+    }
+
+    .prev-btn:hover, .next-btn:hover {
+        background-color: rgb(255, 255, 255, 0.4) !important;
+    }
+  
+    .play-btn:hover {
+        background-color: #6cb8e0 !important;
+    }
+}
