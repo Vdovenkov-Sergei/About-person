@@ -30,10 +30,6 @@ header a {
     font-weight: bold;
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
 section {
     margin-top: 40px;
     padding: 0 40px;
@@ -100,10 +96,6 @@ footer a {
     color: #E1306C;
 }
 
-.social-icon:hover {
-    opacity: 0.8;
-}
-
 .about-info {
     display: flex;
     align-items: center;
@@ -126,11 +118,6 @@ footer a {
 
 .about-info a {
     text-decoration: none;
-}
-
-.about-info a strong:hover {
-    text-decoration: underline;
-    color: #0056b3;
 }
 
 em {
@@ -182,10 +169,6 @@ strong {
     margin: 0;
 }
 
-.album-card:hover {
-    transform: scale(1.05);
-}
-
 .albums-container {
     display: flex;
     gap: 20px;
@@ -221,10 +204,6 @@ strong {
     transition: background 0.3s ease
 }
 
-.prev-btn:hover, .next-btn:hover {
-    background-color: rgb(255, 255, 255, 0.3);
-}
-
 .songs-container {
     display: flex;
     flex-direction: column;
@@ -241,10 +220,6 @@ strong {
     border-radius: 20px;
     padding: 6px 15px;
     transition: transform 0.3s;
-}
-
-.song-card:hover {
-    transform: scale(1.02);
 }
 
 .song-cover {
@@ -280,11 +255,6 @@ strong {
     width: 40px;
     height: 40px;
     flex-shrink: 0;
-}
-
-.play-btn:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
 }
 
 .play-btn:active {
@@ -481,21 +451,34 @@ strong {
     }
 }
 
-/* Отключение hover для мобильных устройств */
-@media (hover: none) {
-    .social-icon:hover {
-        opacity: 1 !important;
+@media (hover: hover) {
+    a:hover {
+        text-decoration: underline;
     }
 
-    .album-card:hover, .song-card:hover {
-        transform: none !important;
+    .social-icon:hover {
+        opacity: 0.8;
+    }
+
+    .about-info a strong:hover {
+        text-decoration: underline;
+        color: #0056b3;
+    }
+
+    .album-card:hover {
+        transform: scale(1.05);
     }
 
     .prev-btn:hover, .next-btn:hover {
-        background-color: rgb(255, 255, 255, 0.4) !important;
+        background-color: rgb(255, 255, 255, 0.3);
     }
-  
+
+    .song-card:hover {
+        transform: scale(1.02);
+    }
+
     .play-btn:hover {
-        background-color: #6cb8e0 !important;
+        background-color: #0056b3;
+        transform: scale(1.05);
     }
 }
