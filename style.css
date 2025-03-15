@@ -177,6 +177,8 @@ strong {
     padding: 15px;
     width: 84%;
     scrollbar-width: none;
+    list-style: none;
+    margin: 0;
 }
 
 .carousel-container {
@@ -209,6 +211,8 @@ strong {
     flex-direction: column;
     gap: 15px;
     padding: 15px 0;
+    list-style: none;
+    margin: 0;
 }
 
 .song-card {
@@ -448,6 +452,16 @@ strong {
 
     .social-icon {
         font-size: 28px;
+    }
+}
+
+@media (max-width: 320px) {
+    .progress-bar {
+        display: none;
+    }
+    
+    .duration {
+        display: none;
     }
 }
 
